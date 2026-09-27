@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Plane Sweep Algorithm Pedagogical Aid</title>
+</head>
+<body>
+
+    <h1>Plane Sweep Algorithm Pedagogical Aid</h1>
+
+    <p>CSCI 716 - Computational Geometry</p>
+
+    <p>Hoja Arzanesh (ha1797@rit.edu)</p>
+
+    <h1>Project Overview</h1>
+    <p>
+        This project is an interactive, web-based application designed to visualize the
+        Plane Sweep algorithm for detecting line segment intersections. The Plane Sweep
+        algorithm is a fundamental technique in computational geometry that reduces a
+        two-dimensional problem into a dynamic one-dimensional problem by sweeping a
+        vertical line across the plane from left to right.
+    </p>
+    <p>
+        While the algorithm is efficient&mdash;running in O((n + I) log n) time, where
+        n is the number of line segments and I is the number of intersections&mdash;its
+        dynamic nature can be difficult to understand from static diagrams alone. This
+        tool aims to bridge that gap by animating the algorithm step by step, allowing
+        students to see exactly how the sweep line, event queue, and sweep-line status
+        interact with each other.
+    </p>
+    <p>
+        The application will feature a side-by-side view: the left panel will display
+        the geometric plane with the sweep line and line segments, while the right panel
+        will show the current state of the data structures&mdash;the Event Queue (a
+        priority queue of future events) and the Sweep-Line Status (an ordered list of
+        segments currently intersecting the sweep line). Important operations such as
+        insertion, deletion, adjacency checks, and swaps will be visually highlighted.
+    </p>
+
+    <h1>Pedagogical Aid</h1>
+    <p>
+        [This section will contain the interactive visualization. It is currently under development.]
+    </p>
+
+    <h1>References</h1>
+    <ul>
+        <li>
+            Mount, D. M. (2012). <em>CMSC 754 Computational Geometry Lecture Notes:
+            Line Segment Intersection</em>. University of Maryland.
+            <a href="http://www.cs.umd.edu/class/spring2026/cmsc754/index.html">
+                http://www.cs.umd.edu/class/spring2026/cmsc754/index.html
+            </a>
+        </li>
+        <li>
+            Pless, R. (n.d.). <em>Computational Geometry Course Materials</em>.
+            Washington University in St. Louis.
+            <a href="https://www2.seas.gwu.edu/~pless/teaching.php">
+                https://www2.seas.gwu.edu/~pless/teaching.php
+            </a>
+        </li>
+        <li>
+            de Berg, M., Cheong, O., van Kreveld, M., &amp; Overmars, M. (2008).
+            <em>Computational Geometry: Algorithms and Applications</em> (3rd ed.).
+            Springer.
+            <a href="https://ics-websites.science.uu.nl/geobook/index.html">
+                https://ics-websites.science.uu.nl/geobook/index.html
+            </a>
+        </li>
+    </ul>
+
+</body>
+</html>
