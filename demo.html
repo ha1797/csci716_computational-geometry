@@ -8,51 +8,95 @@
 </head>
 <body>
 
-<!-- Global NavBar -->
-<nav class="global-nav">
-    <div class="nav-content">
-        <a href="index.html" class="nav-brand">Plane Sweep Aid</a>
-        <div class="nav-links">
-            <a href="index.html">Background</a>
-            <a href="demo.html" class="active">Pedagogical Aid (Demo)</a>
-        </div>
-    </div>
-</nav>
+<div class="container-lg">
 
-<header>
+    <h1 class="site-title"><a href="index.html">Plane Sweep Aid</a></h1>
+    <nav class="site-nav">
+        <a href="index.html">Background</a> &middot;
+        <a href="demo.html" aria-current="page">Pedagogical Aid (Demo)</a>
+    </nav>
+
     <h1>Interactive Demo</h1>
-</header>
 
-<div class="page-wrapper flex-layout">
+    <h2>Instructions</h2>
+    <p>Follow these steps to test the system:</p>
+    <ul>
+        <li>Use the sample, paste your own segments, or upload a <code>.txt</code> file in the same format as the command-line tool.</li>
+        <li>Click "Run Sweep". The input is validated: no vertical or horizontal segments, no colinear segments, and no three segments through one point.</li>
+        <li>Press "Play" or step through the events. The sweep line moves from right to left.</li>
+        <li>Blue segments are in the sweep-line status, red dots are intersections found so far, and an orange ring marks the current intersection event.</li>
+        <li>Review the output console for results and error logs, or download the intersections file.</li>
+    </ul>
 
-    <div class="content-section">
-        <h2>Instructions</h2>
-        <p>Follow these steps to test the system:</p>
-        <ul>
-            <li>Upload your dataset using the interface below.</li>
-            <li>Adjust the parameters to match your requirements.</li>
-            <li>Click "Run Analysis" and wait for the system to process.</li>
-            <li>Review the output console for results and error logs.</li>
-        </ul>
+    <h2>Input</h2>
+    <p>First line: number of segments. Then one segment per line as <code>x1 y1 x2 y2</code>.</p>
+    <textarea id="segments-input" class="viz-input" rows="8" spellcheck="false" aria-label="Segments input"></textarea>
+    <div class="viz-toolbar">
+        <button id="run-btn" class="btn btn-primary" type="button">Run Sweep</button>
+        <label for="segments-file" class="btn">Upload .txt</label>
+        <input id="segments-file" type="file" accept=".txt,text/plain" hidden>
+        <button id="sample-btn" class="btn" type="button">Load Sample</button>
+        <button id="download-btn" class="btn" type="button" disabled>Download Intersections</button>
     </div>
 
-    <div class="content-section demo-area">
-        <div class="demo-inner">
-            <p style="font-size: 1.1rem; color: var(--text-primary);">Interactive Canvas / Input Area</p>
-            <button class="btn">Run Analysis</button>
+    <h2>Visualization</h2>
+    <div id="viz-title" class="viz-title"></div>
+    <div class="viz-layout">
+        <div>
+            <canvas id="plane-canvas" class="viz-canvas" aria-label="Plane sweep visualization"></canvas>
+            <div class="viz-legend">
+                <span><i class="swatch swatch-segment"></i>segment</span>
+                <span><i class="swatch swatch-active"></i>in sweep status</span>
+                <span><i class="swatch swatch-sweep"></i>sweep line</span>
+                <span><i class="swatch swatch-intersection"></i>intersection</span>
+                <span><i class="swatch swatch-event"></i>current event</span>
+            </div>
+        </div>
+        <div class="viz-side">
+            <div class="viz-panel">
+                <div class="panel-header">Sweep-Line Status (top &rarr; bottom)</div>
+                <pre id="status-panel"></pre>
+            </div>
+            <div class="viz-panel">
+                <div class="panel-header">Event Queue (next &rarr;)</div>
+                <pre id="queue-panel"></pre>
+            </div>
+        </div>
+    </div>
+    <div class="viz-controls">
+        <button id="first-btn" class="btn" type="button">&laquo; First</button>
+        <button id="prev-btn" class="btn" type="button">&lsaquo; Prev</button>
+        <button id="play-btn" class="btn btn-primary" type="button">Play</button>
+        <button id="next-btn" class="btn" type="button">Next &rsaquo;</button>
+        <button id="last-btn" class="btn" type="button">Last &raquo;</button>
+        <input id="scrubber" type="range" min="0" max="0" value="0" aria-label="Event">
+        <label class="viz-speed">Delay
+            <input id="speed" type="range" min="50" max="1500" step="50" value="450">
+            <span id="speed-label">450 ms</span>
+        </label>
+    </div>
+
+    <h2>Output</h2>
+    <div class="output-console">
+        <div class="panel-header">System Log</div>
+        <div id="console-box" class="console-body">
+            <div id="console-lines"></div>
         </div>
     </div>
 
-    <div class="content-section">
-        <h2>Output</h2>
-        <div class="output-console">
-            <div class="output-header">System Log</div>
-            <div class="console-line">System initialized successfully.</div>
-            <div class="console-line">Ready for input...</div>
-        </div>
-    </div>
+    <div class="footer">CSCI 716 - Computational Geometry &middot; Hoja Arzanesh</div>
 
 </div>
+
+<script src="js/log.js"></script>
+<script src="js/models.js"></script>
+<script src="js/geometry.js"></script>
+<script src="js/sweep-status.js"></script>
+<script src="js/parser.js"></script>
+<script src="js/checker.js"></script>
+<script src="js/output.js"></script>
+<script src="js/driver.js"></script>
+<script src="js/visualize.js"></script>
 
 </body>
 </html>
