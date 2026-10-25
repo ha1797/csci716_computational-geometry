@@ -1,71 +1,164 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Plane Sweep Algorithm Pedagogical Aid</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
+<!-- Global NavBar -->
+<nav class="global-nav">
+    <div class="nav-content">
+        <a href="index.html" class="nav-brand">Plane Sweep Aid</a>
+        <div class="nav-links">
+            <a href="index.html" class="active">Background</a>
+            <a href="demo.html">Pedagogical Aid (Demo)</a>
+        </div>
+    </div>
+</nav>
+
+<header>
     <h1>Plane Sweep Algorithm Pedagogical Aid</h1>
+    <div class="header-meta">
+        <p>CSCI 716 - Computational Geometry</p>
+        <p>Hoja Arzanesh (ha1797@rit.edu)</p>
+    </div>
+</header>
 
-    <p>CSCI 716 - Computational Geometry</p>
+<div class="page-wrapper">
 
-    <p>Hoja Arzanesh (ha1797@rit.edu)</p>
+    <div class="content-section">
+        <h2>Team Members</h2>
+        <div class="team-grid">
+            <div class="team-member">Hoja Arzanesh</div>
+        </div>
+    </div>
 
-    <h1>Project Overview</h1>
-    <p>
-        This project is an interactive, web-based application designed to visualize the
-        Plane Sweep algorithm for detecting line segment intersections. The Plane Sweep
-        algorithm is a fundamental technique in computational geometry that reduces a
-        two-dimensional problem into a dynamic one-dimensional problem by sweeping a
-        vertical line across the plane from left to right.
-    </p>
-    <p>
-        While the algorithm is efficient&mdash;running in O((n + I) log n) time, where
-        n is the number of line segments and I is the number of intersections&mdash;its
-        dynamic nature can be difficult to understand from static diagrams alone. This
-        tool aims to bridge that gap by animating the algorithm step by step, allowing
-        students to see exactly how the sweep line, event queue, and sweep-line status
-        interact with each other.
-    </p>
-    <p>
-        The application will feature a side-by-side view: the left panel will display
-        the geometric plane with the sweep line and line segments, while the right panel
-        will show the current state of the data structures&mdash;the Event Queue (a
-        priority queue of future events) and the Sweep-Line Status (an ordered list of
-        segments currently intersecting the sweep line). Important operations such as
-        insertion, deletion, adjacency checks, and swaps will be visually highlighted.
-    </p>
+    <div class="content-section">
+        <h2>Problem Description</h2>
+        <p>
+            This project is an interactive, web-based application designed to visualize the
+            Plane Sweep algorithm for detecting line segment intersections. The Plane Sweep
+            algorithm is a fundamental technique in computational geometry that reduces a
+            two-dimensional problem into a dynamic one-dimensional problem by sweeping a
+            vertical line across the plane from left to right.
+        </p>
+        <p>
+            While the algorithm is efficient&mdash;running in O((n + I) log n) time, where
+            n is the number of line segments and I is the number of intersections&mdash;its
+            dynamic nature can be difficult to understand from static diagrams alone. This
+            tool aims to bridge that gap by animating the algorithm step by step, allowing
+            students to see exactly how the sweep line, event queue, and sweep-line status
+            interact with each other.
+        </p>
+        <p>
+            The application will feature a side-by-side view: the left panel will display
+            the geometric plane with the sweep line and line segments, while the right panel
+            will show the current state of the data structures&mdash;the Event Queue (a
+            priority queue of future events) and the Sweep-Line Status (an ordered list of
+            segments currently intersecting the sweep line). Important operations such as
+            insertion, deletion, adjacency checks, and swaps will be visually highlighted.
+        </p>
+    </div>
 
-    <h1>Pedagogical Aid</h1>
-    <p>
-        [This section will contain the interactive visualization. It is currently under development.]
-    </p>
+    <div class="content-section">
+        <h2>Background Information</h2>
+        <p>Provide context. What existing research or previous work exists in this space? Why is this problem relevant today?</p>
+    </div>
 
-    <h1>References</h1>
-    <ul>
-        <li>
-            Mount, D. M. (2012). <em>CMSC 754 Computational Geometry Lecture Notes:
-            Line Segment Intersection</em>. University of Maryland.
-            <a href="http://www.cs.umd.edu/class/spring2026/cmsc754/index.html">
-                http://www.cs.umd.edu/class/spring2026/cmsc754/index.html
-            </a>
-        </li>
-        <li>
-            Pless, R. (n.d.). <em>Computational Geometry Course Materials</em>.
-            Washington University in St. Louis.
-            <a href="https://www2.seas.gwu.edu/~pless/teaching.php">
-                https://www2.seas.gwu.edu/~pless/teaching.php
-            </a>
-        </li>
-        <li>
-            de Berg, M., Cheong, O., van Kreveld, M., &amp; Overmars, M. (2008).
-            <em>Computational Geometry: Algorithms and Applications</em> (3rd ed.).
-            Springer.
-            <a href="https://ics-websites.science.uu.nl/geobook/index.html">
-                https://ics-websites.science.uu.nl/geobook/index.html
-            </a>
-        </li>
-    </ul>
+    <div class="content-section">
+        <h2>Algorithms & Pseudo-Code</h2>
+        <p>The core logic relies on the following algorithm:</p>
+        <pre><code>function processData(input):
+    if input is empty:
+        return null
+
+    result = initialize_new_state()
+    for item in input:
+        result = update_state(result, item)
+
+    return finalize(result)</code></pre>
+    </div>
+
+    <div class="content-section">
+        <h2>Implementation</h2>
+        <p>Describe the tech stack. E.g., "Built using Python for the backend and React for the frontend, communicating via a REST API." Mention any significant challenges overcome during development.</p>
+    </div>
+
+    <div class="content-section">
+        <h2>Timeline</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <strong>Week 5-6: Preparation & Core Setup</strong>
+                <ul style="margin-top: 8px; margin-bottom: 0;">
+                    <li>Finalize the visual design and the tech stack that will be used.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <strong>Week 7-8: Algorithm Implementation</strong>
+                <ul style="margin-top: 8px; margin-bottom: 0;">
+                    <li>Implement the core Plane Sweep algorithm.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <strong>Week 9-10: Intersection & Swap Logic</strong>
+                <ul style="margin-top: 8px; margin-bottom: 0;">
+                    <li>Implement the intersection event detection, adjacency checks, and swap operation.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <strong>Week 11-12: Interactivity & Polish</strong>
+                <ul style="margin-top: 8px; margin-bottom: 0;">
+                    <li>Add interactive controls.</li>
+                </ul>
+            </div>
+            <div class="timeline-item">
+                <strong>Week 13-14: Testing & Finalization</strong>
+                <ul style="margin-top: 8px; margin-bottom: 0;">
+                    <li>Test with edge cases and preset configurations.</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-section">
+        <h2>Pedagogical Aid</h2>
+        <p>
+            The interactive visualization component of this project is currently under development.
+            Please check back soon, or visit the Demo page to see the progress.
+        </p>
+    </div>
+
+    <div class="content-section">
+        <h2>References</h2>
+        <ul>
+            <li>
+                Mount, D. M. (2012). <em>CMSC 754 Computational Geometry Lecture Notes:
+                Line Segment Intersection</em>. University of Maryland.
+                <a href="http://www.cs.umd.edu/class/spring2026/cmsc754/index.html">
+                    http://www.cs.umd.edu/class/spring2026/cmsc754/index.html
+                </a>
+            </li>
+            <li>
+                Pless, R. (n.d.). <em>Computational Geometry Course Materials</em>.
+                Washington University in St. Louis.
+                <a href="https://www2.seas.gwu.edu/~pless/teaching.php">
+                    https://www2.seas.gwu.edu/~pless/teaching.php
+                </a>
+            </li>
+            <li>
+                de Berg, M., Cheong, O., van Kreveld, M., &amp; Overmars, M. (2008).
+                <em>Computational Geometry: Algorithms and Applications</em> (3rd ed.).
+                Springer.
+                <a href="https://ics-websites.science.uu.nl/geobook/index.html">
+                    https://ics-websites.science.uu.nl/geobook/index.html
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 
 </body>
 </html>

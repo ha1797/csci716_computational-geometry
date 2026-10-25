@@ -1,0 +1,296 @@
+/* Unified Design System */
+:root {
+    --bg-color: #121212;
+    --surface-color: #1e1e1e;
+    --surface-hover: #2a2a2a;
+    --nav-bg: #0a0a0a;
+    --text-primary: #f5f5f5;
+    --text-secondary: #a0a0a0;
+    --accent: #4a90e2;
+    --border-color: #333333;
+    --console-bg: #000000;
+    --console-text: #10b981;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-primary);
+    line-height: 1.6;
+}
+
+/* =========================================
+   Global NavBar (Shared across pages)
+   ========================================= */
+.global-nav {
+    background-color: var(--nav-bg);
+    border-bottom: 1px solid var(--border-color);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-content {
+    max-width: 1000px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+}
+
+.nav-brand {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--text-primary);
+    text-decoration: none;
+    letter-spacing: 0.5px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 24px;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: var(--accent);
+}
+
+/* =========================================
+   Page Headers
+   ========================================= */
+header {
+    text-align: center;
+    padding: 60px 0 40px 0;
+}
+
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 10px;
+}
+
+.header-meta {
+    color: var(--text-secondary);
+    font-size: 1.1rem;
+}
+
+/* =========================================
+   Content Layout & Sections
+   ========================================= */
+.page-wrapper {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px 60px 20px;
+}
+
+/* Used for flex layout on demo page */
+.page-wrapper.flex-layout {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    width: 100%;
+}
+
+.content-section {
+    background-color: var(--surface-color);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 32px;
+    margin-bottom: 24px;
+    transition: background-color 0.2s;
+}
+
+/* Remove bottom margin for flex layout gaps */
+.flex-layout .content-section {
+    margin-bottom: 0;
+}
+
+.content-section:hover {
+    background-color: var(--surface-hover);
+}
+
+h2 {
+    font-size: 1.25rem;
+    color: var(--text-primary);
+    margin-bottom: 16px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+p {
+    color: var(--text-secondary);
+    margin-bottom: 12px;
+}
+
+/* =========================================
+   Specific Element Styling
+   ========================================= */
+.team-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 16px;
+}
+
+.team-member {
+    background: #2d2d2d;
+    border: 1px solid var(--border-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    color: var(--text-primary);
+}
+
+pre {
+    background-color: #000;
+    padding: 16px;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: "Courier New", Courier, monospace;
+    color: var(--accent);
+    font-size: 0.9rem;
+    border: 1px solid var(--border-color);
+    margin-top: 16px;
+}
+
+.timeline {
+    border-left: 2px solid var(--accent);
+    padding-left: 20px;
+    margin-left: 10px;
+    margin-top: 16px;
+}
+
+.timeline-item {
+    margin-bottom: 20px;
+    position: relative;
+    color: var(--text-secondary);
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -26px;
+    top: 8px;
+    width: 10px;
+    height: 10px;
+    background-color: var(--accent);
+    border-radius: 50%;
+}
+
+ul {
+    list-style-position: inside;
+    color: var(--text-secondary);
+    margin-top: 12px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+li a {
+    color: var(--accent);
+    text-decoration: none;
+    word-break: break-all; /* Prevents long URLs from breaking layout */
+}
+
+li a:hover {
+    text-decoration: underline;
+}
+
+/* =========================================
+   Demo Page Specific Styling
+   ========================================= */
+.demo-area {
+    flex: 1;
+    min-height: 350px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-image:
+            linear-gradient(45deg, var(--surface-hover) 25%, transparent 25%),
+            linear-gradient(-45deg, var(--surface-hover) 25%, transparent 25%),
+            linear-gradient(45deg, transparent 75%, var(--surface-hover) 75%),
+            linear-gradient(-45deg, transparent 75%, var(--surface-hover) 75%);
+    background-size: 20px 20px;
+    background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+    background-color: #162032;
+    border: 2px dashed var(--border-color);
+    position: relative;
+}
+
+.demo-inner {
+    text-align: center;
+    background: rgba(30, 41, 59, 0.9);
+    padding: 40px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+}
+
+.btn {
+    background-color: var(--accent);
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #2563eb;
+}
+
+.output-console {
+    background-color: var(--console-bg);
+    color: var(--console-text);
+    font-family: "Courier New", Courier, monospace;
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    min-height: 120px;
+    margin-top: 8px;
+}
+
+.output-header {
+    color: var(--text-secondary);
+    font-family: -apple-system, sans-serif;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 8px;
+}
+
+.console-line {
+    margin-bottom: 5px;
+}
+
+.console-line::before {
+    content: "> ";
+    color: #666;
+}
