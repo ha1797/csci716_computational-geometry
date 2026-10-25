@@ -17,13 +17,6 @@ The site is plain HTML, CSS, and JavaScript. There is no build step, framework, 
 
 Open `demo.html` directly in a browser. No server is needed.
 
-Optionally, serve the folder instead:
-
-```bash
-python -m http.server 8000
-# then visit http://localhost:8000/demo.html
-```
-
 ## Using the Visualizer
 
 1. **Provide input:** use the pre-loaded sample, paste segments into the text box, or click **Upload .txt**.
@@ -91,12 +84,6 @@ Scripts are loaded as classic `<script>` tags in dependency order (not ES module
 ## Complexity
 
 With *n* segments and *I* intersections, the sweep processes 2*n* endpoint events and *I* intersection events, each in O(log *n*) (expected, for the skip list). Total: **O((n + I) log n)** time.
-
-## Deploying to GitHub Pages
-
-1. Copy the contents of this folder to the root of the repository (or to a `/docs` folder).
-2. In the repository, go to **Settings → Pages**, and choose the branch and folder to publish.
-3. The site will be served at `https://<username>.github.io/<repository>/`.
 
 ## References
 
