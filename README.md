@@ -26,7 +26,7 @@ Open `demo.html` directly in a browser. No server is needed.
 
 ### What You See
 
-- **Plane (left):** all segments in gray, segments currently in the sweep-line status in blue, the sweep line in red, intersections found so far as red dots, and the current intersection event circled in orange.
+- **Plane (left):** all segments in gray, segments currently in the sweep-line status in blue, the sweep line in red, intersections found so far as red dots, and the event currently being processed (start, end, or intersection) circled in orange.
 - **Sweep-Line Status (right, top):** segments crossing the sweep line, ordered top to bottom.
 - **Event Queue (right, bottom):** pending events in the order they will be processed.
 - **Output:** a log of each run, the list of intersections, and any parse or validation errors.
