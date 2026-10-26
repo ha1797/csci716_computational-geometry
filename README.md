@@ -87,9 +87,8 @@ With *n* segments and *I* intersections, the sweep processes 2*n* endpoint event
 
 ## References
 
-- Mount, D. M. (2012). *CMSC 754 Computational Geometry Lecture Notes: Line Segment Intersection*. University of Maryland.
-- Pless, R. (n.d.). *Computational Geometry Course Materials*. Washington University in St. Louis.
 - de Berg, M., Cheong, O., van Kreveld, M., & Overmars, M. (2008). *Computational Geometry: Algorithms and Applications* (3rd ed.). Springer.
+- Course Notes
 
 ## Author
 
